@@ -261,7 +261,7 @@ const gradeTwoItems = [
   { char:"裡", bopomofo:"ㄌㄧˇ", strokes:12 }, { char:"邊", bopomofo:"ㄅㄧㄢ", strokes:18 },
   { char:"這", bopomofo:"ㄓㄜˋ", strokes:10 }, { char:"那", bopomofo:"ㄋㄚˋ", strokes:7 },
   { char:"哪", bopomofo:"ㄋㄚˇ", strokes:9 }, { char:"誰", bopomofo:"ㄕㄟˊ", strokes:15 },
-  { char:"什", bopomofo:"ㄕㄣˊ", strokes:4 }, { char:"麼", bopomofo:"ㄇㄜ˙", strokes:14 },
+  { char:"什", bopomofo:"ㄕㄣˊ", strokes:4 }, { char:"麼", bopomofo:"˙ㄇㄜ", strokes:14 },
   { char:"因", bopomofo:"ㄧㄣ", strokes:6 }, { char:"為", bopomofo:"ㄨㄟˋ", strokes:9 },
   { char:"可", bopomofo:"ㄎㄜˇ", strokes:5 }, { char:"能", bopomofo:"ㄋㄥˊ", strokes:10 },
   { char:"會", bopomofo:"ㄏㄨㄟˋ", strokes:13 }, { char:"得", bopomofo:"ㄉㄜˊ", strokes:11 },
@@ -367,8 +367,11 @@ function playWrongSound() {
   });
 }
 
-function randomItem(exceptChar = null) {
-  const candidates = activeItems.filter(item => item.char !== exceptChar);
+function randomItem(exceptItem = null) {
+  // 干擾字須排除同音字，避免同一題出現兩個都念對的答案。
+  const candidates = activeItems.filter(item =>
+    !exceptItem || (item.char !== exceptItem.char && item.bopomofo !== exceptItem.bopomofo)
+  );
   const pool = candidates.length ? candidates : activeItems;
   return pool[Math.floor(Math.random() * pool.length)];
 }
@@ -387,7 +390,7 @@ function newQuestion() {
 
   // 左右各顯示一個字；正確字與干擾字都從目前筆畫範圍的字庫隨機抽取。
   const correctItem = randomItem();
-  const wrongItem = randomItem(correctItem.char);
+  const wrongItem = randomItem(correctItem);
   const correct = makeSingleChoice(correctItem);
   const wrong = makeSingleChoice(wrongItem);
   answer = correct;
