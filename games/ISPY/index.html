@@ -167,9 +167,9 @@
     .door-stage {
       position: relative;
       width: min(80%, 1120px);
-      aspect-ratio: 3 / 1;
+      aspect-ratio: 2 / 1;
       margin: 22px auto 0;
-      perspective: 1100px;
+      perspective: 1400px;
       filter: drop-shadow(0 28px 22px rgba(27, 65, 76, .28));
     }
 
@@ -222,7 +222,7 @@
       z-index: 2;
       padding: clamp(14px, 2.6vw, 24px);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       background:
         linear-gradient(90deg, transparent 0 47%, rgba(255,255,255,.08) 48% 52%, transparent 53%),
@@ -237,6 +237,7 @@
     .windows {
       width: min(30%, 320px);
       height: auto;
+      margin-top: clamp(6px, 1.6vw, 20px);
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-rows: repeat(3, auto);
@@ -343,7 +344,7 @@
       .eyebrow { gap: 7px; margin-bottom: 6px; font-size: .85rem; }
       .eyebrow::before { width: 12px; height: 12px; border-width: 3px; }
       h1 { font-size: clamp(1.2rem, 5vw, 1.6rem); }
-      .door-stage { width: 80%; aspect-ratio: 2.1 / 1; margin-top: 16px; }
+      .door-stage { width: 80%; aspect-ratio: 1 / 1; margin-top: 16px; }
       .door-frame {
         border-width: 8px;
         border-bottom-width: 10px;
@@ -352,7 +353,7 @@
       }
       .door-panel { padding: 10px; }
       .windows {
-        width: min(42%, 220px);
+        width: min(58%, 300px);
         gap: 3px;
         padding: 5px;
         border-width: 5px;
@@ -379,8 +380,8 @@
 
     @media (max-width: 520px) {
       .sparkle { display: none; }
-      .door-stage { aspect-ratio: 1.9 / 1; }
-      .windows { width: 46%; }
+      .door-stage { aspect-ratio: 1 / 1.1; }
+      .windows { width: 62%; }
       .choices { gap: 8px; }
       .choice { min-height: 64px; }
       .feedback-row { align-items: center; flex-direction: row; gap: 10px; }
@@ -390,8 +391,8 @@
 
     @media (max-width: 340px) {
       body { padding-inline: 8px; }
-      .door-stage { aspect-ratio: 1.8 / 1; }
-      .windows { width: 48%; }
+      .door-stage { aspect-ratio: 1 / 1.1; }
+      .windows { width: 64%; }
       .choice { min-height: 60px; font-size: 2rem; }
     }
 
@@ -628,7 +629,7 @@
         stage.classList.remove("open");
         // 關門立即清空答案，直到玩家答對才填入。
         answerSymbols.forEach(symbol => { symbol.textContent = ""; });
-        currentScene = randomItem(Object.keys(activities));
+        currentScene = randomItem(Object.keys(activities).filter((scene) => scene !== currentScene));
         scenes.forEach(scene => {
           scene.toggleAttribute("hidden", scene.dataset.scene !== currentScene);
           scene.querySelector("title").textContent = "等待揭曉";
