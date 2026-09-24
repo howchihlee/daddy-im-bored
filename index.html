@@ -154,6 +154,11 @@
       font-weight: 900;
     }
 
+    .play-logo {
+      width: 28px;
+      height: 28px;
+    }
+
     .game-card:active { transform: translateY(3px); }
     .game-card:active .play-label { box-shadow: 0 3px 0 var(--purple-dark); }
 
@@ -192,6 +197,12 @@
           <img class="game-logo" src="games/hatchu/assets/logo.png" alt="Hatchu">
         </span>
         <span class="play-label">開始玩 <span aria-hidden="true">▶</span></span>
+      </a>
+      <a class="game-card" href="games/whack-a-bo/" aria-label="開始玩地鼠王">
+        <span class="logo-wrap">
+          <img class="game-logo" src="games/whack-a-bo/assets/logo.svg" alt="地鼠王">
+        </span>
+        <span class="play-label"><img class="play-logo" src="games/whack-a-bo/assets/logo.svg" alt="">地鼠王 <span aria-hidden="true">▶</span></span>
       </a>
     </nav>
 
