@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">孵蛋王標誌</title>
+  <desc id="logo-desc">一隻戴著金色皇冠、從蛋殼中孵出的可愛小雞，搭配綠色圓角徽章</desc>
+  <defs>
+    <linearGradient id="badge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#478a67"/><stop offset="1" stop-color="#24543f"/></linearGradient>
+    <linearGradient id="chick" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff2a9"/><stop offset=".6" stop-color="#f5d36e"/><stop offset="1" stop-color="#e7ac4d"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff2a9"/><stop offset="1" stop-color="#e7ac4d"/></linearGradient>
+    <linearGradient id="shell" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fffdf1"/><stop offset=".6" stop-color="#f3e7ce"/><stop offset="1" stop-color="#d9c5a0"/></linearGradient>
+  </defs>
+  <rect x="2" y="2" width="92" height="92" rx="25" fill="url(#badge)" stroke="#d8e9b6" stroke-width="2"/>
+  <path d="M13 73C23 65 30 73 40 70S57 67 67 71S83 68 88 74V86H10Z" fill="#acd08c" opacity=".48"/>
+  <path d="M20 84Q48 76 76 84" fill="none" stroke="#183e31" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+  <path d="M22 69V55C22 39 33 31 48 31S74 39 74 55V69Q48 82 22 69Z" fill="url(#chick)" stroke="#98703a" stroke-width="2.2"/>
+  <path d="M30 46Q33 40 39 39" fill="none" stroke="#fff9d5" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  <ellipse cx="48" cy="63" rx="18" ry="13" fill="#fff0b1"/>
+  <circle cx="37" cy="53" r="3.8" fill="#352c29"/><circle cx="59" cy="53" r="3.8" fill="#352c29"/>
+  <circle cx="36" cy="52" r="1.25" fill="#fff"/><circle cx="58" cy="52" r="1.25" fill="#fff"/>
+  <ellipse cx="29" cy="61" rx="5" ry="3" fill="#e6a4a0" opacity=".8"/><ellipse cx="67" cy="61" rx="5" ry="3" fill="#e6a4a0" opacity=".8"/>
+  <path d="M41 60Q48 55 55 60Q52 67 48 67Q44 67 41 60Z" fill="#ee9b45" stroke="#a46a32" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M43 61Q48 63 53 61" fill="none" stroke="#b77935" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M22 64L31 70L39 64L48 72L57 64L65 70L74 64C77 77 66 87 48 87S19 77 22 64Z" fill="url(#shell)" stroke="#95794f" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M28 74Q31 81 39 82" fill="none" stroke="#fffdf1" stroke-width="3" stroke-linecap="round"/>
+  <path d="M59 72L55 77L60 80L57 84" fill="none" stroke="#b9a17a" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M23 60Q13 60 17 70Q20 74 26 72Q29 69 23 60Z" fill="url(#chick)" stroke="#98703a" stroke-width="2"/>
+  <path d="M73 60Q83 60 79 70Q76 74 70 72Q67 69 73 60Z" fill="url(#chick)" stroke="#98703a" stroke-width="2"/>
+  <path d="M27 36L23 17L36 23L48 10L60 23L73 17L69 36Z" fill="url(#gold)" stroke="#8e6131" stroke-width="2.3" stroke-linejoin="round"/>
+  <path d="M28 31H68" fill="none" stroke="#fff2a5" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="48" cy="24" r="3.5" fill="#4b916d" stroke="#fff0aa" stroke-width="1.4"/>
+  <circle cx="35" cy="18" r="1.5" fill="#fff5bb"/><circle cx="61" cy="18" r="1.5" fill="#fff5bb"/>
+</svg>

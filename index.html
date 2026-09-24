@@ -10,7 +10,6 @@
       --ink: #29304a;
       --purple: #6c63ff;
       --purple-dark: #4e46d8;
-      --paper: #fffdf7;
       --yellow: #ffd85a;
       --pink: #ff7aa8;
       --mint: #62d9b7;
@@ -47,124 +46,83 @@
     body::after { right: -90px; bottom: -120px; background: var(--pink); }
 
     .page {
-      width: min(1100px, calc(100% - 32px));
+      width: min(520px, calc(100% - 32px));
       margin: 0 auto;
-      padding: clamp(42px, 8vw, 88px) 0 56px;
+      padding: clamp(42px, 8vw, 80px) 0 56px;
       text-align: center;
     }
 
-
     h1 {
       margin: 0;
-      font-size: clamp(2.65rem, 8vw, 5.5rem);
+      font-size: clamp(2.2rem, 7vw, 3.6rem);
       line-height: .96;
       letter-spacing: -.055em;
       color: #9d96ff;
-      text-shadow: 0 5px 0 rgba(0, 0, 0, .45), 0 9px 0 rgba(108, 99, 255, .2);
+      text-shadow: 0 4px 0 rgba(0, 0, 0, .45), 0 7px 0 rgba(108, 99, 255, .2);
     }
 
     .intro {
-      max-width: 600px;
-      margin: 24px auto 38px;
+      margin: 18px auto 34px;
       color: #bcc4e0;
-      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
       font-weight: 700;
       line-height: 1.6;
     }
 
     .games {
       display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 26px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 16px;
     }
 
-    .game-card {
-      position: relative;
+    .game-link {
       display: flex;
-      flex-direction: column;
-      width: min(310px, 100%);
-      min-height: 330px;
-      padding: 20px;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 20px;
       color: #f1f4ff;
       text-decoration: none;
+      font-size: clamp(1.15rem, 3vw, 1.4rem);
+      font-weight: 900;
+      letter-spacing: .04em;
       background: rgba(30, 39, 64, .94);
-      border: 4px solid #4a5680;
-      border-radius: 32px;
-      box-shadow: 0 12px 0 rgba(78, 70, 216, .16), 0 22px 45px rgba(53, 48, 112, .14);
-      transition: transform .2s ease, box-shadow .2s ease;
+      border: 3px solid #4a5680;
+      border-radius: 22px;
+      box-shadow: 0 6px 0 rgba(78, 70, 216, .22), 0 14px 28px rgba(53, 48, 112, .16);
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-    .game-card::before {
-      content: "★";
-      position: absolute;
-      top: -17px;
-      right: 20px;
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      color: #7b5500;
-      background: var(--yellow);
-      border: 3px solid #fff;
-      border-radius: 50%;
-      transform: rotate(9deg);
-      box-shadow: 0 4px 0 rgba(123, 85, 0, .18);
-    }
-
-    .game-card:hover,
-    .game-card:focus-visible {
-      transform: translateY(-8px) rotate(-1deg);
-      box-shadow: 0 16px 0 rgba(78, 70, 216, .16), 0 28px 50px rgba(53, 48, 112, .2);
+    .game-link:hover,
+    .game-link:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--purple);
+      box-shadow: 0 9px 0 rgba(78, 70, 216, .28), 0 18px 32px rgba(53, 48, 112, .22);
       outline: none;
     }
 
-    .logo-wrap {
-      display: grid;
-      place-items: center;
-      min-height: 205px;
-      padding: 16px;
-      border-radius: 23px;
-      background: linear-gradient(145deg, #223050, #2b2450);
-      overflow: hidden;
+    .game-link:active {
+      transform: translateY(2px);
+      box-shadow: 0 3px 0 rgba(78, 70, 216, .22);
     }
 
     .game-logo {
-      display: block;
-      width: 100%;
-      height: 175px;
-      object-fit: contain;
-      filter: drop-shadow(0 8px 10px rgba(41, 48, 74, .15));
+      flex: none;
+      width: 56px;
+      height: 56px;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .3));
     }
 
-    .play-label {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin-top: 19px;
-      padding: 13px 18px;
-      color: white;
-      background: var(--purple);
-      border-radius: 18px;
-      box-shadow: 0 6px 0 var(--purple-dark);
-      font-size: 1.15rem;
-      font-weight: 900;
+    .game-name { flex: 1; text-align: left; }
+
+    .game-link::after {
+      content: "▶";
+      color: var(--yellow);
+      font-size: .85em;
     }
-
-    .play-logo {
-      width: 28px;
-      height: 28px;
-    }
-
-    .game-card:active { transform: translateY(3px); }
-    .game-card:active .play-label { box-shadow: 0 3px 0 var(--purple-dark); }
-
 
     @media (prefers-reduced-motion: reduce) {
-      .game-card { transition: none; }
+      .game-link { transition: none; }
     }
   </style>
 </head>
@@ -174,35 +132,25 @@
     <p class="intro">小孩無聊，老爸製作。</p>
 
     <nav class="games" aria-label="所有遊戲">
-      <a class="game-card" href="games/WordKing/" aria-label="開始玩認字王">
-        <span class="logo-wrap">
-          <img class="game-logo" src="games/WordKing/assets/logo.png" alt="認字王">
-        </span>
-        <span class="play-label">開始玩 <span aria-hidden="true">▶</span></span>
+      <a class="game-link" href="games/WordKing/">
+        <img class="game-logo" src="games/WordKing/assets/logo.svg" alt="">
+        <span class="game-name">認字王</span>
       </a>
-      <a class="game-card" href="games/Bopomofo/" aria-label="開始玩注音王">
-        <span class="logo-wrap">
-          <img class="game-logo" src="games/Bopomofo/assets/logo.png" alt="注音王">
-        </span>
-        <span class="play-label">開始玩 <span aria-hidden="true">▶</span></span>
+      <a class="game-link" href="games/Bopomofo/">
+        <img class="game-logo" src="games/Bopomofo/assets/logo.svg" alt="">
+        <span class="game-name">注音王</span>
       </a>
-      <a class="game-card" href="games/ISPY/" aria-label="開始玩注音小偵探">
-        <span class="logo-wrap">
-          <img class="game-logo" src="games/ISPY/assets/logo.png" alt="注音小偵探">
-        </span>
-        <span class="play-label">開始玩 <span aria-hidden="true">▶</span></span>
+      <a class="game-link" href="games/ISPY/">
+        <img class="game-logo" src="games/ISPY/assets/logo.svg" alt="">
+        <span class="game-name">注音王</span>
       </a>
-      <a class="game-card" href="games/hatchu/" aria-label="開始玩 Hatchu">
-        <span class="logo-wrap">
-          <img class="game-logo" src="games/hatchu/assets/logo.png" alt="Hatchu">
-        </span>
-        <span class="play-label">開始玩 <span aria-hidden="true">▶</span></span>
+      <a class="game-link" href="games/hatchu/">
+        <img class="game-logo" src="games/hatchu/assets/logo.svg" alt="">
+        <span class="game-name">孵蛋王</span>
       </a>
-      <a class="game-card" href="games/whack-a-bo/" aria-label="開始玩地鼠王">
-        <span class="logo-wrap">
-          <img class="game-logo" src="games/whack-a-bo/assets/logo.svg" alt="地鼠王">
-        </span>
-        <span class="play-label"><img class="play-logo" src="games/whack-a-bo/assets/logo.svg" alt="">地鼠王 <span aria-hidden="true">▶</span></span>
+      <a class="game-link" href="games/whack-a-bo/">
+        <img class="game-logo" src="games/whack-a-bo/assets/logo.svg" alt="">
+        <span class="game-name">地鼠王</span>
       </a>
     </nav>
 
